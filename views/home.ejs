@@ -1,0 +1,16 @@
+<%- include('partials/header.ejs');  %> 
+<h1>Home</h1>
+
+<p>
+    <%= homeStartingContent %> 
+</p>
+
+<% posts.forEach((post) => { %>
+    <div class ="row">
+        <h2><%=  post.postTitle  %> </h2>
+        <p class = "truncate"><%= post.postText %> </p>
+        <a href=<%=`/posts/${_string.kebabCase(post.postTitle.toLowerCase())}`%>> Read more  </a>
+    </div>
+<% }); %> 
+
+<%- include('partials/footer.ejs');  %> 
